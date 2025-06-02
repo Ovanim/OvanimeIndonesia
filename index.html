@@ -28,10 +28,11 @@
     }
 
     body {
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.5em;
+      padding: 1em;
     }
 
     .card {
@@ -41,6 +42,8 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.2);
       width: 100%;
       max-width: 420px;
+      max-height: 95vh;
+      overflow-y: auto;
       position: relative;
       text-align: center;
       z-index: 1;
@@ -153,7 +156,6 @@
   </style>
 </head>
 <body>
-  <!-- Background particle container -->
   <div id="particles-js"></div>
 
   <img class="octocat" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="GitHub Cat" />
@@ -197,7 +199,6 @@
     <p>📢 Join group: <a href="https://t.me/Grup_Ovanime_Indo" target="_blank">t.me/Grup_Ovanime_Indo</a></p>
   </div>
 
-  <!-- particles.js library -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS('particles-js', {
