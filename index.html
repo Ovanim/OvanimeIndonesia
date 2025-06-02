@@ -17,10 +17,14 @@
       background-color: #ffffff;
       color: #000000;
       height: 100%;
-      background-image:
-        linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px),
-        linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     body {
@@ -39,6 +43,7 @@
       max-width: 420px;
       position: relative;
       text-align: center;
+      z-index: 1;
     }
 
     h1 {
@@ -127,7 +132,11 @@
   </style>
 </head>
 <body>
+  <!-- Background particle container -->
+  <div id="particles-js"></div>
+
   <img class="octocat" src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="GitHub Cat" />
+  
   <div class="card">
     <h1>🌸 OVANIME INDONESIA 🌸</h1>
     <div class="bio">
@@ -140,20 +149,69 @@
 
     <p class="bot-title">🤖 Bot Aktif:</p>
     <ul class="bot-list">
-  <li class="bot-item"><a href="https://t.me/Ai_Hoshino_MusicRobot" target="_blank">Ai Hoshino</a></li>
-  <li class="bot-item"><a href="https://t.me/Aoba_Moca_MusicRobot" target="_blank">Aoba Moca</a></li>
-  <li class="bot-item"><a href="https://t.me/EnterpriseAL_Robot" target="_blank">Enterprise</a></li>
-  <li class="bot-item"><a href="https://t.me/EricAsarii_MusicRobot" target="_blank">Eric Asarii</a></li>
-  <li class="bot-item"><a href="https://t.me/Get_Your_Harem_Bot" target="_blank">Get Your Harem</a></li>
-  <li class="bot-item"><a href="https://t.me/Get_Your_HusbandBot" target="_blank">Get Your Husband</a></li>
-  <li class="bot-item"><a href="https://t.me/Get_Your_Waifu2Bot" target="_blank">Get Your Waifu</a></li>
-  <li class="bot-item"><a href="https://t.me/rinmusic_bot" target="_blank">Rin</a></li>
-  <li class="bot-item"><a href="https://t.me/rubyhoshino_robot" target="_blank">Ruby Hoshino</a></li>
-  <li class="bot-item"><a href="https://t.me/siestadetective_robot" target="_blank">Siesta</a></li>
-  <li class="bot-item"><a href="https://t.me/yae_miko_ymrobot" target="_blank">Yae Miko</a></li>
-</ul>
+      <!-- Bot list... -->
+      <li class="bot-item"><a href="https://t.me/Ai_Hoshino_MusicRobot" target="_blank">Ai Hoshino</a></li>
+      <li class="bot-item"><a href="https://t.me/Aoba_Moca_MusicRobot" target="_blank">Aoba Moca</a></li>
+      <li class="bot-item"><a href="https://t.me/EnterpriseAL_Robot" target="_blank">Enterprise</a></li>
+      <li class="bot-item"><a href="https://t.me/EricAsarii_MusicRobot" target="_blank">Eric Asarii</a></li>
+      <li class="bot-item"><a href="https://t.me/Get_Your_Harem_Bot" target="_blank">Get Your Harem</a></li>
+      <li class="bot-item"><a href="https://t.me/Get_Your_HusbandBot" target="_blank">Get Your Husband</a></li>
+      <li class="bot-item"><a href="https://t.me/Get_Your_Waifu2Bot" target="_blank">Get Your Waifu</a></li>
+      <li class="bot-item"><a href="https://t.me/rinmusic_bot" target="_blank">Rin</a></li>
+      <li class="bot-item"><a href="https://t.me/rubyhoshino_robot" target="_blank">Ruby Hoshino</a></li>
+      <li class="bot-item"><a href="https://t.me/siestadetective_robot" target="_blank">Siesta</a></li>
+      <li class="bot-item"><a href="https://t.me/yae_miko_ymrobot" target="_blank">Yae Miko</a></li>
+    </ul>
 
     <p>📢 Join group: <a href="https://t.me/Grup_Ovanime_Indo" target="_blank">t.me/Grup_Ovanime_Indo</a></p>
   </div>
+
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 80,
+          density: { enable: true, value_area: 800 }
+        },
+        color: { value: "#000000" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+          polygon: { nb_sides: 5 }
+        },
+        opacity: {
+          value: 0.2,
+          random: true
+        },
+        size: {
+          value: 3,
+          random: true
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" },
+          resize: true
+        },
+        modes: {
+          repulse: { distance: 100, duration: 0.4 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
